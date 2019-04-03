@@ -9,7 +9,7 @@ int main()
 {
 	srand( (unsigned)time( NULL ) );
 
-	QueueFIFO* q = (QueueFIFO*)calloc( 1, sizeof( QueueFIFO ) );
+	QueueFIFO* q = (QueueFIFO*)calloc( 1, sizeof( QueueFIFO ) );	//Create queue
 	if( !QFCreate( q ) )
 	{
 		printf( "ERROR! QFCreate\n" );
@@ -17,9 +17,9 @@ int main()
 	}
 
 	for( int i = 0; i < 20; i++ )
-		QFEnqueue( q, rand() % 50 + 1 );
+		QFEnqueue( q, rand() % 50 + 1 );		//Add random items
 
-	QFEnqueue( q, 20 );
+	QFEnqueue( q, 20 );					
 	QFEnqueue( q, 500 );
 	QFEnqueue( q, 3 );
 
